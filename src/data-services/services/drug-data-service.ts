@@ -1,11 +1,11 @@
-import { User } from '../models';
+import { Drug } from '../models';
 import { DataService } from './data-service';
 
-export class UserDataService extends DataService {
+export class DrugDataService extends DataService {
   constructor() {
-    super(User);
+    super(Drug);
   }
 
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types, @typescript-eslint/explicit-function-return-type
-  public getByEmail = (email: string) => this.model.query().findOne({ email });
+  public getByBarCode = (barCode: string) => this.model.query().findOne({ barCode });
 }

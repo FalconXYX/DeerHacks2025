@@ -1,7 +1,4 @@
-import { AuthorDataService } from './services/author-data-service';
-import { BookDataService } from './services/book-data-service';
-import { LibraryDataService } from './services/library-data-service';
-import { UserDataService } from './services/user-data-service';
+import { DrugDataService } from './services/drug-data-service';
 
 import { Database } from '../lib/database';
 
@@ -10,8 +7,5 @@ import { Database } from '../lib/database';
 new Database();
 
 export const ds = {
-  author: new AuthorDataService(),
-  book: new BookDataService(),
-  library: new LibraryDataService(),
-  user: new UserDataService(),
+  drug: new DrugDataService(),
 };

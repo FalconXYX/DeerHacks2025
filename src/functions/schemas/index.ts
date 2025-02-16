@@ -2,8 +2,7 @@
 
 import { default as Ajv } from 'ajv';
 
-import library from '../../data-services/models/schemas/library.json';
-import user from '../../data-services/models/schemas/user.json';
+import drug from '../../data-services/models/schemas/drug.json';
 
 const ajv = new Ajv();
 
@@ -24,5 +23,4 @@ function transformModelSchema(schema: Record<string, unknown>): Ajv.ValidateFunc
   return ajv.compile(middySchema);
 }
 
-export const libraryCreateSchema = transformModelSchema(library);
-export const userCreateSchema = transformModelSchema(user);
+export const drugCreateSchema = transformModelSchema(drug);

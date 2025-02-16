@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Lambda Function</title>
+</head>
+
+<body>
+    <h1>Test Lambda Function</h1>
+
+    <label for="barcode">Enter Barcode:</label>
+    <input type="text" id="barcode" placeholder="Enter barcode" />
+    <button onclick="callLambdaFunction()">Submit</button>
+
+    <h2>Response</h2>
+    <pre id="response"></pre>
+
+    <script>
+
+
+        // Function to make a POST request
+        async function Post(url, data) {
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+            return response.json();
+        }
+
+        // Function to call the baseHandler function directly
+        async function callLambdaFunction() {
+
+
+            // Call the Lambda function
+            const result = await Post(
+                "http://localhost:3000/development/drug",
+                {
+                    barcode: 
+                }
+            );
+            let genericValue = JSON.parse(result.message);
+            genericValue = genericValue.generic;
+            console.log(genericValue); // { genericName: "ibuprofe" }
+
+        }
+    </script>
+</body>
+
+</html>

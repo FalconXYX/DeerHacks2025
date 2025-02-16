@@ -24,46 +24,13 @@ provider:
     environment: ${self:provider.stage}
 
 functions:
-  library-create:
-    handler: src/functions/library/create.handler
+  drug:
+    handler: src/functions/drug.handler
     layers:
       - ${file(env.yml):${self:provider.stage}.layers.NodeModulesLayer}
     events:
       - http:
-          path: libraries
-          method: post
-    environment:
-      TEST_ENVIRONMENT: ${file(env.yml):${self:provider.stage}.environment.TEST_ENVIRONMENT}
-
-  library-get:
-    handler: src/functions/library/get.handler
-    layers:
-      - ${file(env.yml):${self:provider.stage}.layers.NodeModulesLayer}
-    events:
-      - http:
-          path: libraries/{id}
-          method: get
-    environment:
-      TEST_ENVIRONMENT: ${file(env.yml):${self:provider.stage}.environment.TEST_ENVIRONMENT}
-
-  ping:
-    handler: src/functions/ping.handler
-    layers:
-      - ${file(env.yml):${self:provider.stage}.layers.NodeModulesLayer}
-    events:
-      - http:
-          path: ping
-          method: get
-    environment:
-      TEST_ENVIRONMENT: ${file(env.yml):${self:provider.stage}.environment.TEST_ENVIRONMENT}
-
-  user:
-    handler: src/functions/user.handler
-    layers:
-      - ${file(env.yml):${self:provider.stage}.layers.NodeModulesLayer}
-    events:
-      - http:
-          path: user
+          path: drug
           method: post
     environment:
       TEST_ENVIRONMENT: ${file(env.yml):${self:provider.stage}.environment.TEST_ENVIRONMENT}
