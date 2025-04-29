@@ -36,6 +36,9 @@ functions:
       TEST_ENVIRONMENT: ${file(env.yml):${self:provider.stage}.environment.TEST_ENVIRONMENT}
 
 custom:
+  serverless-offline:
+    httpPort: 4040
+    host: 0.0.0.0
   bundle:
     sourcemaps: true # Enable source maps
     caching: true # Enable Webpack caching

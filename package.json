@@ -4,7 +4,7 @@
   "version": "0.0.2",
   "scripts": {
     "start": "node_modules/.bin/serverless offline start --reloadHandler",
-    "tail": "node_modules/.bin/serverless offline start --host 0.0.0.0 --port 4040 --reloadHandler",
+    "tail": "serverless offline start",
     "lint": "eslint -c ./.eslintrc.json . --ext .ts --fix",
     "test": "jest --config=jest.config.ts",
     "predeploy": "./scripts/build-lambda-layers.sh && cd build && serverless deploy --stage staging",
