@@ -4,7 +4,7 @@
   "version": "0.0.2",
   "scripts": {
     "start": "node_modules/.bin/serverless offline start --reloadHandler",
-    "tail": "serverless offline start",
+    "tail": "NODE_OPTIONS='--dns-result-order=ipv4first' serverless offline start",
     "lint": "eslint -c ./.eslintrc.json . --ext .ts --fix",
     "test": "jest --config=jest.config.ts",
     "predeploy": "./scripts/build-lambda-layers.sh && cd build && serverless deploy --stage staging",
