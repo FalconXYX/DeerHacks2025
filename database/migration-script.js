@@ -34,7 +34,7 @@ tunnel(tunnelConfig, (error, server) => {
 
   // create a connection to the database
   const connection = knex({
-    client: 'mysql',
+    client: 'postgres',
     connection: {
       host: '127.0.0.1',
       port: '5000',
